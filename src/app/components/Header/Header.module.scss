@@ -1,0 +1,12 @@
+.header {
+    height: 100vh;
+    position: relative;
+
+    &__wrapper {
+        padding: 20px;
+    }
+
+    &__nav_container {
+        border: 1px solid #d00;
+    }
+}
