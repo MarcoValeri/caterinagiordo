@@ -1,0 +1,83 @@
+@use "../abstract/mixins" as mixins;
+@use "../abstract/variables" as variable;
+
+// Content
+.h1 {
+    font-size: 5rem;
+
+    @include mixins.respond("sm") {
+        font-size: 4rem;
+    }
+}
+
+.h2 {
+    font-size: 4rem;
+}
+
+.h3 {
+    font-size: 3.5rem;
+}
+
+.h4 {
+    font-size: 3rem;
+}
+
+.p-xl {
+    font-size: 2.8rem;
+}
+
+.p-lg {
+    font-size: 2.5rem;
+}
+
+.p-md {
+    font-size: 2.2rem;
+}
+
+.p {
+    font-size: 2rem;
+}
+
+.p-sm {
+    font-size: 1.8rem;
+}
+
+.p-slim {
+    font-size: 1.4rem;
+}
+
+// Link
+.link-no-style {
+    text-decoration: none;
+    color: variable.$black;
+}
+
+.link-effect-load {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: variable.$black;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: variable.$blue;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+// List
+.list-no-style {
+    list-style: none;
+}

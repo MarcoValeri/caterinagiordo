@@ -1,12 +1,112 @@
+@use "../../assets/scss/abstract/mixins" as mixins;
+@use "../../assets/scss/abstract/variables" as variable;
+
 .header {
     height: 100vh;
     position: relative;
+
 
     &__wrapper {
         padding: 20px;
     }
 
     &__nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #d00;
+        
+        @include mixins.respond("lg") {
+            border: 2px solid yellow;
+        }
+    }
+
+    &__nav_container_logo {
+        width: 20%;
+        border: 1px solid #d00;
+    }
+
+    &__nav_container_menu {
+        width: 60%;
+        text-align: center;
+        border: 1px solid #000;
+
+        @include mixins.respond("lg") {
+            display: none;
+        }
+    }
+
+    &__nav_menu {}
+
+    &__nav_menu_item {
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    &__nav_container_social {
+        width: 20%;
+        text-align: center;
+        border: 1px solid #d00;
+
+        @include mixins.respond("lg") {
+            display: none;
+        }
+    }
+
+    &__nav_menu_icon {
+        display: inline-block;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    &__nav_menu_lines {
+        display: none;
+
+        @include mixins.respond("lg") {
+            display: block;
+            position: relative;
+            width: 5rem;
+            height: 4rem;
+            cursor: pointer;
+        }
+    }
+
+    &__nav_menu_line {
+        position: absolute;
+        width: 4rem;
+        background-color: variable.$black;
+        padding: .2rem;
+        transition: all .2s ease-in-out;
+        border-radius: 50px;
+    }
+
+    &__nav_menu_line__one {
+        top: 20%;
+    }
+
+    &__nav_menu_line__one_open {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+
+    &__nav_menu_line__two {
+        top: 40%;
+    }
+
+    &__nav_menu_line__two_open {
+        display: none;
+    }
+
+    &__nav_menu_line__three {
+        top: 60%;
+    }
+
+    &__nav_menu_line__three_open {
+        top: 52%;
+        transform: rotate(135deg);
+    }
+
+    &__nav_menu_mobile {
         border: 1px solid #d00;
     }
 }
